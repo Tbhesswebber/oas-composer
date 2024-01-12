@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "@tbhesswebber/eslint-config/core",
+    "@tbhesswebber/eslint-config/typescript",
+    "@tbhesswebber/eslint-config/format"
+  ],
+  "root": true,
+  "overrides": [
+    {
+      "files": ["./**/*.config.ts"],
+      "rules": {
+        "import/no-extraneous-dependencies": [
+          "error",
+          { "devDependencies": true }
+        ]
+      }
+    }
+  ]
+}
