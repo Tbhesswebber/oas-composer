@@ -5,7 +5,7 @@ import dts from "vite-plugin-dts";
 import { defineConfig } from "vitest/config";
 
 const config = defineConfig({
-  plugins: [dts({ include: ["src/api"] })],
+  plugins: [dts({ include: ["src/api"], exclude: "**/*.test.ts" })],
   build: {
     copyPublicDir: false,
     lib: {
@@ -13,6 +13,7 @@ const config = defineConfig({
         path.dirname(fileURLToPath(import.meta.url)),
         "src/api/main.ts",
       ),
+      fileName: "main",
       formats: ["es", "cjs"],
     },
   },
