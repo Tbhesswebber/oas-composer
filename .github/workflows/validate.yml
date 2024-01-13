@@ -13,10 +13,8 @@ jobs:
       matrix:
         node-version: ["18.x", "20.x"]
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pnpm
-        uses: ./.github/composite-workflows/setup-pnpm
+      - name: Setup Script Runner
+        uses: ./.github/composite-workflows/pnpm-script-base
         with:
           node-version: ${{ matrix.node-version }}
       - run: pnpm run lint
@@ -26,10 +24,8 @@ jobs:
       matrix:
         node-version: ["18.x", "20.x"]
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pnpm
-        uses: ./.github/composite-workflows/setup-pnpm
+      - name: Setup Script Runner
+        uses: ./.github/composite-workflows/pnpm-script-base
         with:
           node-version: ${{ matrix.node-version }}
       - run: pnpm test
@@ -39,10 +35,8 @@ jobs:
       matrix:
         node-version: ["18.x", "20.x"]
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pnpm
-        uses: ./.github/composite-workflows/setup-pnpm
+      - name: Setup Script Runner
+        uses: ./.github/composite-workflows/pnpm-script-base
         with:
           node-version: ${{ matrix.node-version }}
       - run: pnpm run compile

@@ -1,5 +1,5 @@
-name: Setup Pnpm
-description: Setup node and pnpm
+name: Base Pnpm Script Action
+description: Setup everything to run a pnpm script
 inputs:
   node-version:
     description: the version of Node to use
@@ -8,6 +8,8 @@ inputs:
 runs:
   using: composite
   steps:
+    - name: Checkout
+      uses: actions/checkout@v4
     - name: Install dependencies
       uses: pnpm/action-setup@v2
       with:
