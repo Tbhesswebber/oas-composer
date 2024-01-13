@@ -13,6 +13,8 @@ jobs:
       matrix:
         node-version: ["18.x", "20.x"]
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Setup Script Runner
         uses: ./.github/composite-workflows/pnpm-script-base
         with:
@@ -24,6 +26,8 @@ jobs:
       matrix:
         node-version: ["18.x", "20.x"]
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Setup Script Runner
         uses: ./.github/composite-workflows/pnpm-script-base
         with:
@@ -35,6 +39,8 @@ jobs:
       matrix:
         node-version: ["18.x", "20.x"]
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Setup Script Runner
         uses: ./.github/composite-workflows/pnpm-script-base
         with:
