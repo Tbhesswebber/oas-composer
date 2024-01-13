@@ -5,7 +5,6 @@
     "module": "ESNext",
     "lib": ["ES2020"],
     "skipLibCheck": true,
-    "allowJs": true,
     
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -28,5 +27,5 @@
     /* Types */
     "types": ["node", "vitest/globals"],
   },
-  "include": ["src", "./**/*.ts", "./*.config.*"]
+  "include": ["src"]
 }
