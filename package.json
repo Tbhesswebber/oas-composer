@@ -14,6 +14,7 @@
     "dev": "vitest --watch",
     "build": "pnpm run compile && vite build",
     "compile": "tsc",
+    "lint": "eslint",
     "test": "vitest --watch=false"
   },
   "devDependencies": {

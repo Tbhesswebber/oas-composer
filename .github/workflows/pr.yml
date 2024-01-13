@@ -11,7 +11,7 @@ permissions:
   contents: read # for checkout
 
 jobs:
-  lint:
+  validate-pr-title:
     runs-on: ubuntu-latest
     permissions:
       statuses: write
