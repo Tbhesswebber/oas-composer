@@ -11,59 +11,38 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: ["16.x", "18.x", "20.x"]
+        node-version: ["18.x", "20.x"]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Install dependencies
-        uses: pnpm/action-setup@v2
+      - name: Setup Pnpm
+        uses: ./.github/composite-workflows/setup-pnpm
         with:
-          version: 8
-          run_install: |
-            - recursive: true
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          cache: "pnpm"
           node-version: ${{ matrix.node-version }}
       - run: pnpm run lint
   test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: ["16.x", "18.x", "20.x"]
+        node-version: ["18.x", "20.x"]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Install dependencies
-        uses: pnpm/action-setup@v2
+      - name: Setup Pnpm
+        uses: ./.github/composite-workflows/setup-pnpm
         with:
-          version: 8
-          run_install: |
-            - recursive: true
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          cache: "pnpm"
           node-version: ${{ matrix.node-version }}
       - run: pnpm test
   compile:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: ["16.x", "18.x", "20.x"]
+        node-version: ["18.x", "20.x"]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Install dependencies
-        uses: pnpm/action-setup@v2
+      - name: Setup Pnpm
+        uses: ./.github/composite-workflows/setup-pnpm
         with:
-          version: 8
-          run_install: |
-            - recursive: true
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          cache: "pnpm"
           node-version: ${{ matrix.node-version }}
       - run: pnpm run compile
