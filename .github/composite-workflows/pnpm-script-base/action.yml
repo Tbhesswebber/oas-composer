@@ -1,0 +1,21 @@
+name: Base Pnpm Script Action
+description: Setup everything to run a pnpm script
+inputs:
+  node-version:
+    description: the version of Node to use
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Install dependencies
+      uses: pnpm/action-setup@v2
+      with:
+        version: 8
+        run_install: |
+          - recursive: true
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        cache: "pnpm"
+        node-version: ${{ matrix.node-version }}
