@@ -1,15 +1,15 @@
 {
   "name": "oas-composer",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "repository": {
     "type": "github",
-    "url": "https://github.com/Tbhesswebber/oas-composer"
+    "url": "git+https://github.com/Tbhesswebber/oas-composer.git"
   },
   "type": "module",
   "main": "./dist/main.cjs",
   "module": "./dist/main.js",
   "types": "./dist/main.d.ts",
+  "files": ["dist"],
   "scripts": {
     "dev": "vitest --watch",
     "build": "pnpm run compile && vite build",
