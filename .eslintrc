@@ -7,7 +7,10 @@
   "root": true,
   "overrides": [
     {
-      "files": ["./**/*.config.ts"],
+      "files": ["./**/*.config.*"],
+      "parserOptions": {
+        "project": "./tsconfig.root.json"
+      },
       "rules": {
         "import/no-extraneous-dependencies": [
           "error",
